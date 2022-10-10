@@ -1,4 +1,4 @@
-# GROMACS-GPU Protein
+# GROMACS_GPU (Protein)
     source /usr/local/gromacs/bin/GMXRC
     gmx pdb2gmx -f bap1n.pdb -o pro.gro -ignh
     gmx editconf -f pro.gro -o box.gro -bt dodecahedron -d 1.0
@@ -15,9 +15,7 @@
     gmx mdrun -v -deffnm md_50
     gmx make_ndx -f em-steep.gro -o chain_a.ndx
     gmx trjconv -f md_50.xtc -s md_50.tpr -o md_50-n.xtc -center -pbc mol -ur compact -n chain_a.ndx
-# GROMACS-GPU Protein-Ligand 
-    antechamber -i 755sr.pdb -o fda.mol2 -fi pdb -fo mol2 -at bcc -c bcc
-    acpype -di fda.mol2 -c bcc
+# GROMACS_GPU (Protein_Ligand) 
     source /usr/local/gromacs/bin/GMXRC
     gmx pdb2gmx -f tc10_remove-tail-LRG.pdb -o pro.gro -ignh
     gmx editconf -f fda_NEW.pdb -o fda.gro
